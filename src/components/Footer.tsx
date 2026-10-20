@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-3">
               <a
-                href="https://instagram.com/brkt__apparel"
+                href="https://www.instagram.com/brktapparelandmore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-gray-300 hover:text-pink-400"
@@ -87,9 +87,15 @@ export const Footer: React.FC = () => {
                 <span className="text-pink-500 font-bold">📷 Instagram:</span>
                 <span>{STORE_DETAILS.instagram}</span>
               </a>
-              <p className="text-xs text-gray-400">
-                TikTok: <span className="text-white font-medium">{STORE_DETAILS.tiktok}</span>
-              </p>
+              <a
+                href="https://www.tiktok.com/@brktapparelandmore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs text-gray-300 hover:text-amber-200"
+              >
+                <span className="text-gray-300 font-bold">🎵 TikTok:</span>
+                <span>{STORE_DETAILS.tiktok}</span>
+              </a>
             </div>
           </div>
 

@@ -16,11 +16,10 @@ export const STORE_DETAILS = {
   tagline: "Fashion Home For All",
   phone: "+234 807 452 0598",
   whatsappNumber: "2348074520598",
-  altPhone: "+234 806 912 9899",
   address: "BH 1, 2 Minister Line, Lugbe, Abuja, FCT, Nigeria 900107",
   email: "bukkyeleyinla@yahoo.com",
-  instagram: "@brkt__apparel",
-  tiktok: "@brkt_20",
+  instagram: "@brktapparelandmore",
+  tiktok: "@brktapparelandmore",
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.485292837315!2d7.3698243!3d8.9734125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e7195c80ba1b3%3A0x8e833fbbd09cfbb3!2sMinister%20Line%2C%20Lugbe%2C%20Abuja!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
 };
 

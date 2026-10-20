@@ -58,9 +58,6 @@ export const LocationAndContact: React.FC = () => {
                         {STORE_DETAILS.phone}
                       </a>
                     </p>
-                    <p className="text-gray-500 text-xs">
-                      Alt: {STORE_DETAILS.altPhone}
-                    </p>
                   </div>
                 </div>
 
@@ -97,9 +94,9 @@ export const LocationAndContact: React.FC = () => {
                 <span className="text-xs font-bold text-gray-700 uppercase tracking-wider block">
                   Follow Our Social Media
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="https://instagram.com/brkt__apparel"
+                    href="https://www.instagram.com/brktapparelandmore"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-3 py-1.5 bg-white border border-amber-200 rounded-xl text-xs font-semibold text-gray-800 hover:text-pink-600 transition-colors shadow-2xs"
@@ -109,7 +106,7 @@ export const LocationAndContact: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://tiktok.com/@brkt_20"
+                    href="https://www.tiktok.com/@brktapparelandmore"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-3 py-1.5 bg-white border border-amber-200 rounded-xl text-xs font-semibold text-gray-800 hover:text-black transition-colors shadow-2xs"
