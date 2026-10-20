@@ -41,16 +41,26 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
-      <div className="relative bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-amber-100 my-8 animate-in fade-in zoom-in-95 duration-200">
+    <div
+      className="fixed inset-0 z-[100] overflow-y-auto bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 pb-20 sm:pb-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-amber-100 my-auto animate-in fade-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
 
         {/* Close Button */}
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-gray-100 text-gray-700 transition-colors shadow-md"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 p-2.5 rounded-full bg-white/95 hover:bg-gray-100 text-gray-800 transition-all shadow-lg border border-gray-200 active:scale-95 cursor-pointer"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 stroke-[2.5]" />
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -97,6 +107,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   <div className="flex items-center gap-3">
                     {product.colors.map((col) => (
                       <button
+                        type="button"
                         key={col.name}
                         onClick={() => setSelectedColor(col)}
                         className={`w-8 h-8 rounded-full border-2 transition-all flex items-center justify-center ${
@@ -130,6 +141,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   <div className="flex flex-wrap gap-2">
                     {product.sizes.map((sz) => (
                       <button
+                        type="button"
                         key={sz}
                         onClick={() => setSelectedSize(sz)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
@@ -159,6 +171,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             {/* Action Buttons */}
             <div className="pt-4 border-t border-gray-100 flex flex-col gap-2.5">
               <button
+                type="button"
                 onClick={handleDirectWhatsAppOrder}
                 className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 transition-colors shadow-md flex items-center justify-center gap-2"
               >
@@ -167,6 +180,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               </button>
 
               <button
+                type="button"
                 onClick={handleAddToCart}
                 className={`w-full py-3 px-4 rounded-xl font-semibold text-sm border transition-colors flex items-center justify-center gap-2 ${
                   added

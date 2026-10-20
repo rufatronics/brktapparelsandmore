@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { Category, Product, CartItem } from './types';
 import { SAMPLE_PRODUCTS, STORE_DETAILS } from './data/storeData';
 import { Header } from './components/Header';
@@ -14,9 +14,28 @@ import { Sparkles, PhoneCall, ShieldCheck } from 'lucide-react';
 export function App() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [cart, setCart] = useState<CartItem[]>([]);
+
+  // Persistent Cart state stored in localStorage
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('brkt_apparel_cart');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
+
+  // Sync Cart changes to LocalStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('brkt_apparel_cart', JSON.stringify(cart));
+    } catch (err) {
+      console.error('Failed to save cart to cache:', err);
+    }
+  }, [cart]);
 
   // Filter products based on Category and Search keyword
   const filteredProducts = useMemo(() => {

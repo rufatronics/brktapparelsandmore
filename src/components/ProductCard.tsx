@@ -62,7 +62,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div className="group bg-white rounded-2xl overflow-hidden border border-amber-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
 
       {/* Top Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 cursor-pointer" onClick={() => onQuickView(product)}>
+      <div
+        className="relative aspect-[3/4] overflow-hidden bg-gray-100 cursor-pointer"
+        onClick={() => onQuickView(product)}
+      >
         <img
           src={product.image}
           alt={product.name}
@@ -71,20 +74,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         />
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 pointer-events-none">
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               onQuickView(product);
             }}
-            className="w-full py-2.5 px-4 rounded-xl bg-white/95 text-gray-900 font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md hover:bg-[#C5A059] hover:text-white transition-colors"
+            className="w-full py-2.5 px-4 rounded-xl bg-white/95 text-gray-900 font-semibold text-xs flex items-center justify-center gap-1.5 shadow-md hover:bg-[#C5A059] hover:text-white transition-colors pointer-events-auto"
           >
             <Eye className="w-4 h-4" /> Quick View &amp; Order
           </button>
         </div>
 
         {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+        <div className="absolute top-3 left-3 flex flex-col gap-1.5 pointer-events-none">
           {product.badge && (
             <span className="bg-[#C5A059] text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full shadow-sm">
               {product.badge}
@@ -131,8 +135,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           <button
+            type="button"
             onClick={() => onQuickView(product)}
-            className="p-2.5 rounded-xl bg-amber-50 text-[#0F5257] border border-amber-200/60 hover:bg-[#0F5257] hover:text-white transition-colors text-xs font-semibold"
+            className="p-2.5 rounded-xl bg-amber-50 text-[#0F5257] border border-amber-200/60 hover:bg-[#0F5257] hover:text-white transition-colors text-xs font-semibold cursor-pointer"
             aria-label="Select size and order"
           >
             View
